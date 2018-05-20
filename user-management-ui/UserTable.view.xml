@@ -1,0 +1,62 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.UserTableController"
+	xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    height="100%">
+	<m:Page
+		showHeader="false"
+		enableScrolling="false"
+		class="sapUiContentPadding">
+		<m:content>
+			<Table
+				rows="{/UsersCollection}"
+				title="User"
+				selectionMode="MultiToggle"
+				visibleRowCount="7">
+				<columns>
+					<Column width="11rem">
+						<m:Label text="Email" />
+						<template>
+							<m:Text text="{email}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="First Name" />
+						<template>
+							<m:Input value="{firstName}"/>
+						</template>
+					</Column>
+					<Column width="11rem" >
+						<m:Label text="Last name" />
+						<template>
+							<m:Input value="{lastName}" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Password" />
+						<template>
+							<m:Text text="{password}" wrapping="false" />
+						</template>
+					</Column>
+                    <Column width="9rem">
+						<m:Label text="Delete" />
+						<template>
+							<m:Button text="Delete" press="handleDeletePress"/>
+						</template>
+					</Column>
+					<!-- <Column width="9rem">
+						<m:Label text="Role" />
+						<template>
+							<m:ComboBox value="{RoleName}" items="{/Roles}">
+								<c:Item text="{Name}"/>
+							</m:ComboBox>
+						</template>
+					</Column> -->
+				</columns>
+			</Table>
+		</m:content>
+	</m:Page>
+</mvc:View>
